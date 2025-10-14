@@ -1,4 +1,5 @@
 {
+  "semi": false,
   "plugins": ["@prettier/plugin-oxc", "@ianvs/prettier-plugin-sort-imports"],
   "importOrder": ["^."],
   "importOrderSafeSideEffects": ["^."],

@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       '@ianvs/prettier-plugin-sort-imports':
-        specifier: ^4.7.0
+        specifier: 4.7.0
         version: 4.7.0(@prettier/plugin-oxc@0.0.4)(prettier@3.6.2)
       '@prettier/plugin-oxc':
-        specifier: ^0.0.4
+        specifier: 0.0.4
         version: 0.0.4
       oxfmt:
-        specifier: ^0.4.0
+        specifier: 0.4.0
         version: 0.4.0
       prettier:
-        specifier: ^3.6.2
+        specifier: 3.6.2
         version: 3.6.2
 
 packages:
