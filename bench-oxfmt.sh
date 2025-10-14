@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WARMUP=3
-RUNS=30
+RUNS=20
 
 # ---
 
