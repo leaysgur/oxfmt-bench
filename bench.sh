@@ -1,15 +1,21 @@
 #!/bin/bash
 
-./setup.sh
+echo "Use the latest oxfmt binary for benchmarking"
+cp oxfmt_bin/oxfmt-default node_modules/.pnpm/@oxfmt+darwin-arm64@0.4.0/node_modules/@oxfmt/darwin-arm64/oxfmt
 
-oxfmt_format_sort() {
-  ./node_modules/.bin/oxfmt --config .oxfmtrc.sort.json "$@"
+run_prettier() {
+  ./node_modules/.bin/prettier --write --experimental-cli --no-cache --config-path ./prettierrc 'repos/outline/**/*.{js,jsx,ts,tsx}'
+}
+export -f run_prettier
+
+run_oxfmt() {
+  ./node_modules/.bin/oxfmt --config .oxfmtrc.json repos/outline
 }
 export -f oxfmt_format_sort
 
-hyperfine --ignore-failure --warmup 3 --runs 10 \
+hyperfine --ignore-failure --warmup 1 --runs 10 \
   --prepare 'git reset ./repos' \
   --shell=bash \
-  'oxfmt_format outline' \
-  'oxfmt_format_sort outline'
+  'run_prettier' \
+  'run_oxfmt'
 
