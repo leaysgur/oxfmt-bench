@@ -7,7 +7,7 @@ run_prettier() {
   local target_dir="$1"
   local config_path="$2"
   local cache_flag="$3"
-  ./node_modules/.bin/prettier --write --experimental-cli "$cache_flag" --config-path "$config_path" "$target_dir/**/*.{js,jsx,ts,tsx}"
+  # ./node_modules/.bin/prettier --write --experimental-cli "$cache_flag" --config-path "$config_path" "$target_dir/**/*.{js,jsx,ts,tsx}"
 }
 export -f run_prettier
 
