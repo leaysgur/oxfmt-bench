@@ -7,7 +7,7 @@ run_prettier() {
   local target_dir="$1"
   local config_path="$2"
   local cache_flag="$3"
-  # ./node_modules/.bin/prettier --write --experimental-cli "$cache_flag" --config-path "$config_path" "$target_dir/**/*.{js,jsx,ts,tsx}"
+  ./node_modules/.bin/prettier --write --experimental-cli "$cache_flag" --config-path "$config_path" "$target_dir/**/*.{js,jsx,ts,tsx}"
 }
 export -f run_prettier
 
@@ -55,29 +55,6 @@ hyperfine --ignore-failure --warmup $WARMUP --runs $RUNS \
   'run_prettier repos/outline .prettierrc.sort.json --no-cache' \
   'run_prettier repos/outline .prettierrc.sort.json ""' \
   'run_oxfmt repos/outline .oxfmtrc.sort.json'
-echo ""
-
-echo "=========================================="
-echo "🚀 IR transform benchmark: Oxfmt vs Oxfmt"
-echo "=========================================="
-
-hyperfine --ignore-failure --warmup $WARMUP --runs $RUNS \
-  --prepare 'git reset --hard' \
-  --shell=bash \
-  './oxfmt_bin/oxfmt-default --config .oxfmtrc.sort.json repos/outline' \
-  './oxfmt_bin/oxfmt-3x-transform --config .oxfmtrc.sort.json repos/outline' \
-  './oxfmt_bin/oxfmt-5x-transform --config .oxfmtrc.sort.json repos/outline'
-echo ""
-
-echo "=========================================="
-echo "🚀 TSX detection benchmark: Oxfmt vs Oxfmt"
-echo "=========================================="
-
-hyperfine --ignore-failure --warmup $WARMUP --runs $RUNS \
-  --prepare 'git reset --hard' \
-  --shell=bash \
-  './oxfmt_bin/oxfmt-default repos/outline' \
-  './oxfmt_bin/oxfmt-tsx  repos/outline'
 echo ""
 
 # Clean up
