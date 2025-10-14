@@ -12,6 +12,7 @@ echo "=========================================="
 hyperfine --ignore-failure --warmup $WARMUP --runs $RUNS \
   --prepare 'git reset --hard' \
   --shell=bash \
+  './oxfmt_bin/oxfmt-default --config .oxfmtrc.json repos/outline' \
   './oxfmt_bin/oxfmt-default --config .oxfmtrc.sort.json repos/outline' \
   './oxfmt_bin/oxfmt-3x-transform --config .oxfmtrc.sort.json repos/outline' \
   './oxfmt_bin/oxfmt-5x-transform --config .oxfmtrc.sort.json repos/outline'
@@ -24,8 +25,8 @@ echo "=========================================="
 hyperfine --ignore-failure --warmup $WARMUP --runs $RUNS \
   --prepare 'git reset --hard' \
   --shell=bash \
-  './oxfmt_bin/oxfmt-default repos/outline' \
-  './oxfmt_bin/oxfmt-tsx  repos/outline'
+  './oxfmt_bin/oxfmt-default --config .oxfmtrc.json repos/outline' \
+  './oxfmt_bin/oxfmt-tsx --config .oxfmtrc.json repos/outline'
 echo ""
 
 # Clean up
