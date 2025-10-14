@@ -67,26 +67,31 @@ Summary
 ==========================================
 🚀 IR transform benchmark: Oxfmt vs Oxfmt
 ==========================================
-Benchmark 1: ./oxfmt_bin/oxfmt-default --config .oxfmtrc.sort.json repos/outline
-  Time (mean ± σ):      97.4 ms ±  13.3 ms    [User: 312.6 ms, System: 241.3 ms]
-  Range (min … max):    87.8 ms … 130.1 ms    30 runs
+Benchmark 1: ./oxfmt_bin/oxfmt-default --config .oxfmtrc.json repos/outline
+  Time (mean ± σ):     107.2 ms ±   4.7 ms    [User: 332.4 ms, System: 302.4 ms]
+  Range (min … max):    95.3 ms … 115.5 ms    30 runs
+
+Benchmark 2: ./oxfmt_bin/oxfmt-default --config .oxfmtrc.sort.json repos/outline
+  Time (mean ± σ):     113.1 ms ±   4.2 ms    [User: 371.6 ms, System: 307.5 ms]
+  Range (min … max):   105.2 ms … 123.3 ms    30 runs
+
+Benchmark 3: ./oxfmt_bin/oxfmt-3x-transform --config .oxfmtrc.sort.json repos/outline
+  Time (mean ± σ):     126.2 ms ±  16.8 ms    [User: 423.8 ms, System: 312.0 ms]
+  Range (min … max):   113.2 ms … 181.1 ms    30 runs
 
   Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet system without any interferences from other programs.
 
-Benchmark 2: ./oxfmt_bin/oxfmt-3x-transform --config .oxfmtrc.sort.json repos/outline
-  Time (mean ± σ):      99.4 ms ±  10.3 ms    [User: 355.9 ms, System: 241.1 ms]
-  Range (min … max):    93.4 ms … 132.9 ms    30 runs
+Benchmark 4: ./oxfmt_bin/oxfmt-5x-transform --config .oxfmtrc.sort.json repos/outline
+  Time (mean ± σ):     142.4 ms ±  28.1 ms    [User: 484.3 ms, System: 319.4 ms]
+  Range (min … max):   125.2 ms … 259.1 ms    30 runs
 
-  Warning: The first benchmarking run for this command was significantly slower than the rest (132.9 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You are already using both the '--warmup' option as well as the '--prepare' option. Consider re-running the benchmark on a quiet system. Maybe it was a random outlier. Alternatively, consider increasing the warmup count.
-
-Benchmark 3: ./oxfmt_bin/oxfmt-5x-transform --config .oxfmtrc.sort.json repos/outline
-  Time (mean ± σ):     102.4 ms ±   1.6 ms    [User: 399.7 ms, System: 242.6 ms]
-  Range (min … max):    99.6 ms … 106.0 ms    30 runs
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet system without any interferences from other programs.
 
 Summary
-  ./oxfmt_bin/oxfmt-default --config .oxfmtrc.sort.json repos/outline ran
-    1.02 ± 0.17 times faster than ./oxfmt_bin/oxfmt-3x-transform --config .oxfmtrc.sort.json repos/outline
-    1.05 ± 0.14 times faster than ./oxfmt_bin/oxfmt-5x-transform --config .oxfmtrc.sort.json repos/outline
+  ./oxfmt_bin/oxfmt-default --config .oxfmtrc.json repos/outline ran
+    1.06 ± 0.06 times faster than ./oxfmt_bin/oxfmt-default --config .oxfmtrc.sort.json repos/outline
+    1.18 ± 0.17 times faster than ./oxfmt_bin/oxfmt-3x-transform --config .oxfmtrc.sort.json repos/outline
+    1.33 ± 0.27 times faster than ./oxfmt_bin/oxfmt-5x-transform --config .oxfmtrc.sort.json repos/outline
 
 ==========================================
 🚀 TSX detection benchmark: Oxfmt vs Oxfmt
