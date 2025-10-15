@@ -26,10 +26,6 @@ echo "=========================================="
 
 pnpm i
 echo ""
-# 0.4.0 it the latest version but config support is not included yet.
-echo "Use the latest oxfmt binary for benchmarking"
-cp oxfmt_bin/oxfmt-default node_modules/.pnpm/@oxfmt+darwin-arm64@0.4.0/node_modules/@oxfmt/darwin-arm64/oxfmt
-echo ""
 
 # ---
 

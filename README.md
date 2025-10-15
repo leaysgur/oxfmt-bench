@@ -110,3 +110,26 @@ Summary
   ./oxfmt_bin/oxfmt-default repos/outline ran
     1.09 ± 0.17 times faster than ./oxfmt_bin/oxfmt-tsx  repos/outline
 ```
+
+### ./bench-oxfmt-sort.sh
+```
+==========================================
+🚀 Sort imports benchmark: Oxfmt vs Oxfmt
+==========================================
+Benchmark 1: ./oxfmt_bin/oxfmt-sort --config .oxfmtrc.json repos/outline
+  Time (mean ± σ):     100.9 ms ±  16.0 ms    [User: 251.5 ms, System: 224.5 ms]
+  Range (min … max):    87.0 ms … 155.1 ms    30 runs
+
+Benchmark 2: ./oxfmt_bin/oxfmt-sort --config .oxfmtrc.sort.json repos/outline
+  Time (mean ± σ):     109.8 ms ±  23.8 ms    [User: 264.0 ms, System: 233.4 ms]
+  Range (min … max):    87.7 ms … 179.3 ms    30 runs
+
+Benchmark 3: ./oxfmt_bin/oxfmt-sort --config .oxfmtrc.sort_ir.json repos/outline
+  Time (mean ± σ):     115.2 ms ±  21.4 ms    [User: 262.2 ms, System: 236.9 ms]
+  Range (min … max):    96.4 ms … 167.5 ms    30 runs
+
+Summary
+  ./oxfmt_bin/oxfmt-sort --config .oxfmtrc.json repos/outline ran
+    1.09 ± 0.29 times faster than ./oxfmt_bin/oxfmt-sort --config .oxfmtrc.sort.json repos/outline
+    1.14 ± 0.28 times faster than ./oxfmt_bin/oxfmt-sort --config .oxfmtrc.sort_ir.json repos/outline
+```
