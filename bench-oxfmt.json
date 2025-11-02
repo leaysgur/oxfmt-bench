@@ -1,0 +1,4 @@
+{
+  "$schema": "../oxc/npm/oxfmt/configuration_schema.json",
+  "embeddedLanguageFormatting": "off"
+}
