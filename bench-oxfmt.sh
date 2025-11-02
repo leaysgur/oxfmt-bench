@@ -9,8 +9,8 @@ oxfmt_napi_format() {
 export -f oxfmt_napi_format
 
 hyperfine --ignore-failure --warmup 3 --runs 10 \
-  --prepare 'git -C outline reset --hard' \
+  --prepare 'git reset --hard' \
   --shell=bash \
-  -n oxfmt -n oxfmt_napi \
+  -n oxfmt_current -n oxfmt_napi \
   'oxfmt_format outline -c ./bench-oxfmt.json' \
   'oxfmt_napi_format outline -c ./bench-oxfmt.json'
