@@ -4,9 +4,11 @@
   "description": "",
   "packageManager": "pnpm",
   "devDependencies": {
+    "@biomejs/biome": "2.3.2",
     "@ianvs/prettier-plugin-sort-imports": "4.7.0",
     "@prettier/plugin-oxc": "0.0.4",
-    "oxfmt": "0.5.0",
+    "oxfmt-current": "npm:oxfmt@0.9.0",
+    "oxfmt-napi": "file:../oxc/apps/oxfmt",
     "prettier": "3.6.2"
   }
 }

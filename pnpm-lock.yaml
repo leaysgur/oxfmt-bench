@@ -8,15 +8,21 @@ importers:
 
   .:
     devDependencies:
+      '@biomejs/biome':
+        specifier: 2.3.2
+        version: 2.3.2
       '@ianvs/prettier-plugin-sort-imports':
         specifier: 4.7.0
         version: 4.7.0(@prettier/plugin-oxc@0.0.4)(prettier@3.6.2)
       '@prettier/plugin-oxc':
         specifier: 0.0.4
         version: 0.0.4
-      oxfmt:
-        specifier: 0.4.0
-        version: 0.4.0
+      oxfmt-current:
+        specifier: npm:oxfmt@0.9.0
+        version: oxfmt@0.9.0
+      oxfmt-napi:
+        specifier: file:../oxc/apps/oxfmt
+        version: oxfmt@file:../oxc/apps/oxfmt
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -59,6 +65,59 @@ packages:
   '@babel/types@7.28.4':
     resolution: {integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q==}
     engines: {node: '>=6.9.0'}
+
+  '@biomejs/biome@2.3.2':
+    resolution: {integrity: sha512-8e9tzamuDycx7fdrcJ/F/GDZ8SYukc5ud6tDicjjFqURKYFSWMl0H0iXNXZEGmcmNUmABgGuHThPykcM41INgg==}
+    engines: {node: '>=14.21.3'}
+    hasBin: true
+
+  '@biomejs/cli-darwin-arm64@2.3.2':
+    resolution: {integrity: sha512-4LECm4kc3If0JISai4c3KWQzukoUdpxy4fRzlrPcrdMSRFksR9ZoXK7JBcPuLBmd2SoT4/d7CQS33VnZpgBjew==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@biomejs/cli-darwin-x64@2.3.2':
+    resolution: {integrity: sha512-jNMnfwHT4N3wi+ypRfMTjLGnDmKYGzxVr1EYAPBcauRcDnICFXN81wD6wxJcSUrLynoyyYCdfW6vJHS/IAoTDA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@biomejs/cli-linux-arm64-musl@2.3.2':
+    resolution: {integrity: sha512-2Zz4usDG1GTTPQnliIeNx6eVGGP2ry5vE/v39nT73a3cKN6t5H5XxjcEoZZh62uVZvED7hXXikclvI64vZkYqw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-arm64@2.3.2':
+    resolution: {integrity: sha512-amnqvk+gWybbQleRRq8TMe0rIv7GHss8mFJEaGuEZYWg1Tw14YKOkeo8h6pf1c+d3qR+JU4iT9KXnBKGON4klw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64-musl@2.3.2':
+    resolution: {integrity: sha512-gzB19MpRdTuOuLtPpFBGrV3Lq424gHyq2lFj8wfX9tvLMLdmA/R9C7k/mqBp/spcbWuHeIEKgEs3RviOPcWGBA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64@2.3.2':
+    resolution: {integrity: sha512-8BG/vRAhFz1pmuyd24FQPhNeueLqPtwvZk6yblABY2gzL2H8fLQAF/Z2OPIc+BPIVPld+8cSiKY/KFh6k81xfA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-win32-arm64@2.3.2':
+    resolution: {integrity: sha512-lCruqQlfWjhMlOdyf5pDHOxoNm4WoyY2vZ4YN33/nuZBRstVDuqPPjS0yBkbUlLEte11FbpW+wWSlfnZfSIZvg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@biomejs/cli-win32-x64@2.3.2':
+    resolution: {integrity: sha512-6Ee9P26DTb4D8sN9nXxgbi9Dw5vSOfH98M7UlmkjKB2vtUbrRqCbZiNfryGiwnPIpd6YUoTl7rLVD2/x1CyEHQ==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
 
   '@emnapi/core@1.5.0':
     resolution: {integrity: sha512-sbP8GzB1WDzacS8fgNPpHlp6C9VZe+SJP3F90W9rLemaQj2PzIuTEl1qDOYQf58YIpyjViI24y9aPWCjEzY2cg==}
@@ -195,49 +254,54 @@ packages:
   '@oxc-project/types@0.74.0':
     resolution: {integrity: sha512-KOw/RZrVlHGhCXh1RufBFF7Nuo7HdY5w1lRJukM/igIl6x9qtz8QycDvZdzb4qnHO7znrPyo2sJrFJK2eKHgfQ==}
 
-  '@oxfmt/darwin-arm64@0.4.0':
-    resolution: {integrity: sha512-LnlfJ8J8AJPyP47FK+tiy/rlCbBQ2tjicJzL1ppOLmQYfEU5M+HQU0ijgo0ZqLdBjElnGZ0o1VcqvGjXpf3T6g==}
+  '@oxfmt/darwin-arm64@0.9.0':
+    resolution: {integrity: sha512-1D9z55GMMqceq3VT0rNVQjBGanXvwMoNUmkDyXxcigfu+qSVt+qmcJbZwttJfGx9GSlR+ilnAxHODLdcfSShMQ==}
     cpu: [arm64]
     os: [darwin]
 
-  '@oxfmt/darwin-x64@0.4.0':
-    resolution: {integrity: sha512-HT3Vg9ol2u+Z7BSZ/1J+EU6x4HB2++JNzCvC2XOh+MyRP5+9YWEdvLyHsdOWKuslSnWhO1aX/06o92H1WiaFBQ==}
+  '@oxfmt/darwin-x64@0.9.0':
+    resolution: {integrity: sha512-WI/2AsQz058vcpPCcLk3R5gFBlS3kWrzZGGlZq8UljB8Jzn8/OH6+UEZxiDsFJd/ilbBxPpgAgPxna3z8Is4bw==}
     cpu: [x64]
     os: [darwin]
 
-  '@oxfmt/linux-arm64-gnu@0.4.0':
-    resolution: {integrity: sha512-aCvSi9AY9Yn16Z6XJeEZTJLXmgVKTp2H50Bm4TqGOSSPmvGeZT+Ua5xDcqtlSVgUWGIyI+aUAmZOynUCrV3dlA==}
+  '@oxfmt/linux-arm64-gnu@0.9.0':
+    resolution: {integrity: sha512-Sj/mbXJZ1vtCvGcmond5zfW69TA1xFLkDl99aje4JazyMsrEK1PdknJClFKfVIBVPNzxfWa/DixAjFzbJoNQ7A==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxfmt/linux-arm64-musl@0.4.0':
-    resolution: {integrity: sha512-MntgLyRtDyZ2nvVtbEeT+NeDzhkYAQQdfpBpzQw54BD+DCScBrUMvJyYh+3YH1SEVRSnqEzdGvX1OKDfcHvFJg==}
+  '@oxfmt/linux-arm64-musl@0.9.0':
+    resolution: {integrity: sha512-t1+MPQ6xkw6Xy0aNsviunHqnUWKrUgIskR+x4OLUSs+ZxzS2HPqTrYzQJWJp/2wq4lHpF4NsfNBkmXq751YA6A==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxfmt/linux-x64-gnu@0.4.0':
-    resolution: {integrity: sha512-aWP1e1Y5qXNObVnEQQYfoM+mpQWe70NAvBdLxI2O783F+T+9tlmqd4bcXU+jv5AgaXW9d5vbA2CgbrPus8l7Mw==}
+  '@oxfmt/linux-x64-gnu@0.9.0':
+    resolution: {integrity: sha512-/jn3JBBFZb3rw0L+ZazDi757a7/fsI7bxHKUeSLegt4Jlu3EvG1h+zMG5ETsVE0f8ULAuwjsYA/ujGOQxzHRNQ==}
     cpu: [x64]
     os: [linux]
 
-  '@oxfmt/linux-x64-musl@0.4.0':
-    resolution: {integrity: sha512-TLysBhfzoFCLts3MhxZo2yxUufXeaPgMdssKJPpJNHa15QnZIR3VmbIbFN0Px4PwZHPOKSy9UcY71Kcw9xJLVg==}
+  '@oxfmt/linux-x64-musl@0.9.0':
+    resolution: {integrity: sha512-K10t6rNnogmytxbBmdcJnZnSH34kMvTbKI7Kyi0AKv9v7hKUm1kE9hq9VmNyo0KLuu+YYDIMxmQ3Mm5DY2wLyg==}
     cpu: [x64]
     os: [linux]
 
-  '@oxfmt/win32-arm64@0.4.0':
-    resolution: {integrity: sha512-vxhBjlPNCv5j68MupWE/KHeBvqeM0Z4dqlcd0+AB5VjZgHZ/XkdlzyyN3gE6l5L14SAf8+nTpdBdoz7W5ZnpjA==}
+  '@oxfmt/win32-arm64@0.9.0':
+    resolution: {integrity: sha512-IaVN68uowQThhSkbtfKo9Hm4I/y3WHom115tYUXeR6NMi/JDTrBpcrF7v0Tg6b6LbpT6LeXSYVr2cO2IVQwF5A==}
     cpu: [arm64]
     os: [win32]
 
-  '@oxfmt/win32-x64@0.4.0':
-    resolution: {integrity: sha512-7CaV40qG9q3tjtQbJQFgSugrBzpgArwljAlfuJcXx9rEzpKFvb+w2l0RW5RdNQxJkd6GJRcfGDAjvSx5X+7UPw==}
+  '@oxfmt/win32-x64@0.9.0':
+    resolution: {integrity: sha512-77OiFJ9lpc7ICmHMSN+belxHPDMOu9U7N/LEp40YuC219QWClt6E5Ved6GwNV5bsDCTxTrpH1/3LhxBNKC66Xg==}
     cpu: [x64]
     os: [win32]
 
   '@prettier/plugin-oxc@0.0.4':
     resolution: {integrity: sha512-UGXe+g/rSRbglL0FOJiar+a+nUrst7KaFmsg05wYbKiInGWP6eAj/f8A2Uobgo5KxEtb2X10zeflNH6RK2xeIQ==}
     engines: {node: '>=14'}
+
+  '@prettier/sync@0.6.1':
+    resolution: {integrity: sha512-yF9G8vK/LYUTF3Cijd7VC9La3b20F20/J/fgoR4H0B8JGOWnZVZX6+I6+vODPosjmMcpdlUV+gUqJQZp3kLOcw==}
+    peerDependencies:
+      prettier: '*'
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -259,6 +323,9 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
+  make-synchronized@0.8.0:
+    resolution: {integrity: sha512-DZu4lwc0ffoFz581BSQa/BJl+1ZqIkoRQ+VejMlH0VrP4E86StAODnZujZ4sepumQj8rcP7wUnUBGM8Gu+zKUA==}
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -266,8 +333,13 @@ packages:
     resolution: {integrity: sha512-2tDN/ttU8WE6oFh8EzKNam7KE7ZXSG5uXmvX85iNzxdJfMssDWcj3gpYzZi1E04XuE7m3v1dVWl/8BE886vPGw==}
     engines: {node: '>=20.0.0'}
 
-  oxfmt@0.4.0:
-    resolution: {integrity: sha512-V3B4k0AxArTDy0p286bhL3KlyifcDg4iH2UBNCY14jZhCCyV03TJ/HD5qkct4Op5RMTWumnsJV7OgWlona+Wag==}
+  oxfmt@0.9.0:
+    resolution: {integrity: sha512-RVMw8kqZjCDCFxBZyDK4VW8DHxmSHV0pRky7LoLq9JL3ge4kelT0UB8GS0nVTZIteqOJ9rfwPxSZRUVXSX/n0w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    hasBin: true
+
+  oxfmt@file:../oxc/apps/oxfmt:
+    resolution: {directory: ../oxc/apps/oxfmt, type: directory}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -335,6 +407,41 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
+
+  '@biomejs/biome@2.3.2':
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 2.3.2
+      '@biomejs/cli-darwin-x64': 2.3.2
+      '@biomejs/cli-linux-arm64': 2.3.2
+      '@biomejs/cli-linux-arm64-musl': 2.3.2
+      '@biomejs/cli-linux-x64': 2.3.2
+      '@biomejs/cli-linux-x64-musl': 2.3.2
+      '@biomejs/cli-win32-arm64': 2.3.2
+      '@biomejs/cli-win32-x64': 2.3.2
+
+  '@biomejs/cli-darwin-arm64@2.3.2':
+    optional: true
+
+  '@biomejs/cli-darwin-x64@2.3.2':
+    optional: true
+
+  '@biomejs/cli-linux-arm64-musl@2.3.2':
+    optional: true
+
+  '@biomejs/cli-linux-arm64@2.3.2':
+    optional: true
+
+  '@biomejs/cli-linux-x64-musl@2.3.2':
+    optional: true
+
+  '@biomejs/cli-linux-x64@2.3.2':
+    optional: true
+
+  '@biomejs/cli-win32-arm64@2.3.2':
+    optional: true
+
+  '@biomejs/cli-win32-x64@2.3.2':
+    optional: true
 
   '@emnapi/core@1.5.0':
     dependencies:
@@ -435,33 +542,38 @@ snapshots:
 
   '@oxc-project/types@0.74.0': {}
 
-  '@oxfmt/darwin-arm64@0.4.0':
+  '@oxfmt/darwin-arm64@0.9.0':
     optional: true
 
-  '@oxfmt/darwin-x64@0.4.0':
+  '@oxfmt/darwin-x64@0.9.0':
     optional: true
 
-  '@oxfmt/linux-arm64-gnu@0.4.0':
+  '@oxfmt/linux-arm64-gnu@0.9.0':
     optional: true
 
-  '@oxfmt/linux-arm64-musl@0.4.0':
+  '@oxfmt/linux-arm64-musl@0.9.0':
     optional: true
 
-  '@oxfmt/linux-x64-gnu@0.4.0':
+  '@oxfmt/linux-x64-gnu@0.9.0':
     optional: true
 
-  '@oxfmt/linux-x64-musl@0.4.0':
+  '@oxfmt/linux-x64-musl@0.9.0':
     optional: true
 
-  '@oxfmt/win32-arm64@0.4.0':
+  '@oxfmt/win32-arm64@0.9.0':
     optional: true
 
-  '@oxfmt/win32-x64@0.4.0':
+  '@oxfmt/win32-x64@0.9.0':
     optional: true
 
   '@prettier/plugin-oxc@0.0.4':
     dependencies:
       oxc-parser: 0.74.0
+
+  '@prettier/sync@0.6.1(prettier@3.6.2)':
+    dependencies:
+      make-synchronized: 0.8.0
+      prettier: 3.6.2
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -475,6 +587,8 @@ snapshots:
   js-tokens@4.0.0: {}
 
   jsesc@3.1.0: {}
+
+  make-synchronized@0.8.0: {}
 
   ms@2.1.3: {}
 
@@ -498,16 +612,21 @@ snapshots:
       '@oxc-parser/binding-win32-arm64-msvc': 0.74.0
       '@oxc-parser/binding-win32-x64-msvc': 0.74.0
 
-  oxfmt@0.4.0:
+  oxfmt@0.9.0:
     optionalDependencies:
-      '@oxfmt/darwin-arm64': 0.4.0
-      '@oxfmt/darwin-x64': 0.4.0
-      '@oxfmt/linux-arm64-gnu': 0.4.0
-      '@oxfmt/linux-arm64-musl': 0.4.0
-      '@oxfmt/linux-x64-gnu': 0.4.0
-      '@oxfmt/linux-x64-musl': 0.4.0
-      '@oxfmt/win32-arm64': 0.4.0
-      '@oxfmt/win32-x64': 0.4.0
+      '@oxfmt/darwin-arm64': 0.9.0
+      '@oxfmt/darwin-x64': 0.9.0
+      '@oxfmt/linux-arm64-gnu': 0.9.0
+      '@oxfmt/linux-arm64-musl': 0.9.0
+      '@oxfmt/linux-x64-gnu': 0.9.0
+      '@oxfmt/linux-x64-musl': 0.9.0
+      '@oxfmt/win32-arm64': 0.9.0
+      '@oxfmt/win32-x64': 0.9.0
+
+  oxfmt@file:../oxc/apps/oxfmt:
+    dependencies:
+      '@prettier/sync': 0.6.1(prettier@3.6.2)
+      prettier: 3.6.2
 
   picocolors@1.1.1: {}
 
